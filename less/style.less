@@ -1,0 +1,40 @@
+//import "blocks"
+@import "/blocks/header";
+@import "/blocks/header__top";
+@import "/blocks/header__main";
+@import "/blocks/intro";
+@import "/blocks/main";
+
+html {
+  font-size: 15px;
+}
+
+body {
+
+  width: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+p{
+  margin: 0 0 1rem;
+
+  *a{
+    text-decoration: none;
+  }
+}
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+

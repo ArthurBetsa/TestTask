@@ -1,0 +1,94 @@
+.intro {
+  color: white;
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 740px;
+}
+
+.intro__description {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  height: 360px;
+  width: 725px;
+  top: 100px;
+  padding: 30px 60px 50px 10px;
+  background: rgba(133, 167, 120, 0.9);
+  line-height: 1.5;
+
+  &:after{
+    content: "";
+    height: 100%;
+    width: 2px;
+    background-color: white;
+    position: relative;
+    bottom: 10px;
+  }
+
+  &--text {
+    display: flex;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    width: 310px;
+  }
+}
+
+.intro__title {
+  display: flex;
+  margin: 100px auto;
+  position: relative;
+  left: 95px;
+  top: 20px;
+
+
+  &--text {
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 800;
+    font-size: 44px;
+    z-index: 1;
+    letter-spacing: 5px;
+    line-height: 1.38;
+  }
+}
+
+.intro__button{
+  display: flex;
+  align-self: center;
+  position: relative;
+  top: 148px;
+  right: 403px;
+
+  &--button{
+    background: rgb(255, 66, 0);
+    color: white;
+    text-transform: uppercase;
+    font-size: 35px;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 256px;
+    text-align: center;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 40px;
+    font-family: 'Fredoka One', cursive;
+    line-height: 1.1;
+    cursor: pointer;
+    text-decoration: none;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background: rgb(255, 38, 5);
+      transform: translateY(2px);
+
+    }
+
+  }
+}

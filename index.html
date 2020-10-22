@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Task</title>
+    <script src="main.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!--header-->
+<header>
+    <div class="header__container">
+
+        <!--header top-->
+        <div class="header__top">
+
+            <!--header top (basket)-->
+            <div class="top__menu-wrap">
+                <div class="top__menu">
+                    <img src="img/semen.png" alt="" class="top__total-img">
+                    <p class="top__text-thin red-round">3</p>
+                </div>
+                <div class="top__menu">
+                    <p class="top__text">Total: </p>
+                    <p class="top__text-thin"><span id="semen__total">143</span> €</p>
+                </div>
+                <div class="top__menu">
+                    <p class="top__text">Details</p>
+                </div>
+            </div>          <!--  header top (basket) end-->
+        </div>              <!-- header top end-->
+
+
+        <!--header nav-->
+        <div class="header__main">
+            <div class="header__logo">
+                <img src="" alt="" class="header__logo-img">
+                <p class="header__logo-subLogo">logo</p>
+            </div>
+            <div class="header__nav-container">
+                <ul class="header__nav-list">
+                    <li class="header__nav-page header__nav-page--active">
+                        <a href="#" class="header__nav-page-link header__nav-page-link--active">Home</a>
+                    </li>
+                    <li class="header__nav-page">
+                        <a href="#" class="header__nav-page-link">About us</a>
+                    </li>
+                    <li class="header__nav-page">
+                        <a href="#" class="header__nav-page-link">Contacts</a>
+                    </li>
+                    <li class="header__nav-page">
+                        <a href="#" class="header__nav-page-link">Checkout</a>
+                    </li>
+                    <li class="header__nav-page">
+                        <a href="#" class="header__nav-page-link">Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>          <!--header nav end-->
+
+        <!--intro start-->
+        <div class="intro">
+
+            <div class="intro__description">
+                <p class="intro__description--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cumque
+                    deleniti dicta error impedit maiores molestiae molestias odit omnis quae quidem quos unde.</p>
+            </div>
+
+            <div class="intro__title">
+                <h1 class="intro__title--text">Mostly tastes <br> with freshes</h1>
+            </div>
+
+            <div class="intro__button">
+                <button class="intro__button--button">Taste it</button>
+            </div>
+
+        </div>          <!--intro start end-->
+
+
+    </div>
+</header>
+
+
+
+<div class="main">
+
+    <!--about cracker-->
+    <div class="cracker">
+        <div class="cracker__textWrap">
+            <h2 class="cracker__intro">About cracker</h2>
+            <div class="cracker__about">
+                <p class="cracker__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi
+                    impedit ipsum nobis, officiis rerum veniam. Aliquid architecto beatae corporis illo magnam minus nam
+                    nemo neque officia perferendis provident quasi, quidem quis repellat, repellendus tempore vitae.
+                    Aliquam autem blanditiis consequatur cumque cupiditate error fugit, incidunt, ipsa labore nostrum
+                    odit officia officiis perferendis porro quam quisquam, repellendus reprehenderit velit voluptate
+                    voluptatem! Adipisci aliquid aut dolore molestias sit voluptate! Adipisci atque distinctio dolorum
+                    facere laudantium nostrum recusandae? Adipisci asperiores corporis delectus, dolore ea enim est
+                    excepturi facere harum molestiae mollitia porro rem!</p>
+                <div class="cracker__logo">
+                    <img src="#" alt="" class="logo__img">
+                </div>
+            </div>
+        </div>
+    </div><!--about cracker   end-->
+
+    <!--    cracker constructor-->
+    <div class="constructor">
+        <h2 class="constructor__title">Cracker constructor</h2>
+        <div class="constructor__value">
+            <p class="constructor__value--title">Curent value:</p>
+            <p class="constructor__value--price">0€</p>
+        </div>
+
+        <!--form constructor-->
+        <div class="constructor__formWrap">
+
+            <form action="" class="constructor__form">
+                <div class="form__inputWrap">
+                    <label for="soy" class="constructor__label"></label>
+                    <input type="range" id="soy" class="constructor__range">
+                    <div class="constructor__value" id="soy__value">0%</div>
+                </div>
+                <div class="form__inputWrap">
+                    <label for="sesame" class="constructor__label"></label>
+                    <input type="range" id="sesame" class="constructor__range">
+                    <div class="constructor__value" id="sesame__value">0%</div>
+                </div>
+                <div class="form__inputWrap">
+                    <label for="wheat" class="constructor__label"></label>
+                    <input type="range" id="wheat" class="constructor__range">
+                    <div class="constructor__value" id="wheat__value">0%</div>
+                </div>
+                <div class="form__inputWrap">
+                    <label for="corn" class="constructor__label"></label>
+                    <input type="range" id="corn" class="constructor__range">
+                    <div class="constructor__value" id="corn__value">0%</div>
+                </div>
+                <div class="form__inputWrap">
+                    <label for="package" class="constructor__label"></label>
+                    <input type="range" id="package" class="constructor__range">
+                    <div class="constructor__value" id="package__value">0%</div>
+                </div>
+
+                <button id="constructor-order" class="constructor-button">button</button>
+            </form>
+
+        </div>          <!--form constructor end-->
+
+    </div>              <!--    cracker constructor end-->
+
+</div>                  <!--main  end-->
+
+
+<!-- footer-->
+
+<footer class="footer">
+    <div class="footer__wrap">
+        <div class="footer__column">
+            <img src="" alt="" class="footer__img">
+            <p class="footer__text-label">Phone</p>
+            <p class="footer__text-description"></p>
+        </div>
+        <div class="footer__column">
+            <img src="" alt="" class="footer__img">
+            <p class=" footer__text-label">Address</p>
+            <p class="footer__text-description"></p>
+        </div>
+        <div class="footer__column">
+            <img src="" alt="" class="footer__img">
+            <p class="footer__text-label">Share us</p>
+            <div class="footer__links-wrap">
+                <a href="" class="footer__links">
+                    <img src="" alt="" class="footer__img--links">
+                    <p class="footer__text-description">https://www.pinterest.com/</p>
+                </a>
+                <a href="" class="footer__links">
+                    <img src="" alt="" class="footer__img--links">
+                    <p class="footer__text-description">https://www.facebook.com/</p>
+                </a>
+                <a href="" class="footer__links">
+                    <img src="" alt="" class="footer__img--links">
+                    <p class="footer__text-description">https://www.google.com/</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
