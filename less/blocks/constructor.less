@@ -1,0 +1,236 @@
+.constructor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  //background-color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.85));
+
+  padding: 50px;
+}
+
+.constructor__title {
+  display: flex;
+  text-transform: uppercase;
+  color: #000000;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 800;
+  font-size: 44px;
+  letter-spacing: 12px;
+  line-height: 1.38;
+  position: relative;
+  align-self: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+}
+
+.constructor__value-top {
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  position: relative;
+  left: 110px;
+
+  &p {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--title {
+    font-size: 20px;
+    text-transform: uppercase;
+
+  }
+
+  &--price {
+    font-size: 25px;
+  }
+}
+
+.constructor__formWrap {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+
+}
+
+.constructor__form{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__inputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+
+}
+
+label {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+
+#soy_img {
+  background: url("img/soy_input.png") no-repeat;
+}
+
+#sesame_img {
+  background: url("img/sesame_iput.png") no-repeat;
+}
+
+#wheat_img {
+  background: url("img/wheat_input.png") no-repeat;
+}
+
+#corn_img {
+  background: url("img/corn_input.png") no-repeat;
+}
+
+#package_img {
+  background: url("img/package_input.png") no-repeat;
+}
+
+.constructor__range {
+  width: 65%;
+  margin-bottom: 10px;
+
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  background: transparent; /* Otherwise white in Chrome */
+  height: 3px;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+
+  cursor: pointer;
+
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  cursor: pointer;
+  background: none;
+  border-color: transparent;
+  color: transparent;
+}
+
+#soy {
+  background: #00a651;
+
+  &::-webkit-slider-thumb {
+    border-color: #00a651;
+
+  }
+}
+
+#sesame {
+  background: #49743f;
+
+  &::-webkit-slider-thumb {
+    border-color: #49743f;
+  }
+
+}
+
+#wheat {
+  background: #aba000;
+
+  &::-webkit-slider-thumb {
+    border-color: #aba000;
+  }
+}
+
+#corn {
+  background: #939393;
+
+  &::-webkit-slider-thumb {
+    border-color: #939393;
+  }
+}
+
+.form__input-Select{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#package {
+  display: flex;
+  outline: none;
+  position: relative;
+  width: 360px;
+  border: 1px solid #ff3300;
+  height: 55px;
+  border-radius: 30px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+  color: #ff3300;
+  left: 90px;
+
+  option:active {
+background-color: black;
+  }
+
+}
+
+#package-selected {
+  background-color: white;
+  border: none;
+}
+
+.constructor-button{
+  display: flex;
+  align-self: flex-end;
+  outline: none;
+  background: #ff4200;
+  color: white;
+  text-transform: uppercase;
+  font-size: 35px;
+  vertical-align: top;
+  text-align: center;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 40px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:after{
+    content: "+";
+    -webkit-transition: all 3s;
+    transition: all 0.2s;
+    width: 20px;
+   }
+  &:hover:after{
+    content: "ADD TO CART";
+    width: 300px;
+  }
+}
+
+
+

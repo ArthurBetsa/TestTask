@@ -8,6 +8,9 @@ header {
   flex-direction: column;
   width: 100%;
   background: url("img/ultimate-seed-crackers.png") no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
   background-size: 100%;
 }
 .header__top {
@@ -126,15 +129,17 @@ header {
   display: flex;
   position: relative;
   height: 740px;
+  justify-content: flex-start;
+  padding-top: 15px;
 }
 .intro__description {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 360px;
-  width: 725px;
-  top: 100px;
+  height: 45%;
+  width: 45%;
+  top: 15%;
   padding: 30px 60px 50px 10px;
   background: rgba(133, 167, 120, 0.9);
   line-height: 1.5;
@@ -149,18 +154,17 @@ header {
 }
 .intro__description--text {
   display: flex;
-  text-align: center;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   font-size: 18px;
   width: 310px;
+  position: relative;
+  right: 25px;
+  text-align: right;
 }
 .intro__title {
   display: flex;
-  margin: 100px auto;
   position: relative;
-  left: 95px;
-  top: 20px;
 }
 .intro__title--text {
   text-transform: uppercase;
@@ -171,13 +175,16 @@ header {
   z-index: 1;
   letter-spacing: 5px;
   line-height: 1.38;
+  position: relative;
+  top: 120px;
+  right: 40px;
 }
 .intro__button {
   display: flex;
   align-self: center;
   position: relative;
-  top: 148px;
-  right: 403px;
+  top: 120px;
+  right: 175px;
 }
 .intro__button--button {
   background: #ff4200;
@@ -202,6 +209,319 @@ header {
 .intro__button--button:active {
   background: #ff2605;
   transform: translateY(2px);
+}
+.main {
+  background: url("img/main-bg.png") no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  width: 100%;
+}
+.cracker {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.85), white);
+}
+.cracker__textWrap {
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+.cracker__intro {
+  display: flex;
+  text-transform: uppercase;
+  color: #000000;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 800;
+  font-size: 44px;
+  z-index: 1;
+  letter-spacing: 12px;
+  line-height: 1.38;
+  position: relative;
+  align-self: center;
+  left: 80px;
+}
+.cracker__about {
+  padding-top: 30px;
+  padding-left: 85px;
+  background-color: rgba(219, 201, 199, 0.85);
+  height: 360px;
+  width: 70%;
+  display: flex;
+  align-self: flex-end;
+  position: relative;
+  top: 50px;
+  z-index: 1;
+}
+.cracker__text {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  width: 635px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-indent: 36px;
+}
+.cracker__dish {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  left: 420px;
+  z-index: 0;
+}
+.constructor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.85));
+  padding: 50px;
+}
+.constructor__title {
+  display: flex;
+  text-transform: uppercase;
+  color: #000000;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 800;
+  font-size: 44px;
+  letter-spacing: 12px;
+  line-height: 1.38;
+  position: relative;
+  align-self: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+.constructor__value-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  position: relative;
+  left: 110px;
+}
+.constructor__value-topp {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+.constructor__value-top--title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.constructor__value-top--price {
+  font-size: 25px;
+}
+.constructor__formWrap {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+.constructor__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.form__inputWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+label {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+#soy_img {
+  background: url("img/soy_input.png") no-repeat;
+}
+#sesame_img {
+  background: url("img/sesame_iput.png") no-repeat;
+}
+#wheat_img {
+  background: url("img/wheat_input.png") no-repeat;
+}
+#corn_img {
+  background: url("img/corn_input.png") no-repeat;
+}
+#package_img {
+  background: url("img/package_input.png") no-repeat;
+}
+.constructor__range {
+  width: 65%;
+  margin-bottom: 10px;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  background: transparent;
+  /* Otherwise white in Chrome */
+  height: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-ms-track {
+  cursor: pointer;
+  background: none;
+  border-color: transparent;
+  color: transparent;
+}
+#soy {
+  background: #00a651;
+}
+#soy::-webkit-slider-thumb {
+  border-color: #00a651;
+}
+#sesame {
+  background: #49743f;
+}
+#sesame::-webkit-slider-thumb {
+  border-color: #49743f;
+}
+#wheat {
+  background: #aba000;
+}
+#wheat::-webkit-slider-thumb {
+  border-color: #aba000;
+}
+#corn {
+  background: #939393;
+}
+#corn::-webkit-slider-thumb {
+  border-color: #939393;
+}
+.form__input-Select {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#package {
+  display: flex;
+  outline: none;
+  position: relative;
+  width: 360px;
+  border: 1px solid #ff3300;
+  height: 55px;
+  border-radius: 30px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+  color: #ff3300;
+  left: 90px;
+}
+#package option:active {
+  background-color: black;
+}
+#package-selected {
+  background-color: white;
+  border: none;
+}
+.constructor-button {
+  display: flex;
+  align-self: flex-end;
+  outline: none;
+  background: #ff4200;
+  color: white;
+  text-transform: uppercase;
+  font-size: 35px;
+  vertical-align: top;
+  text-align: center;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 40px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-weight: 400;
+}
+.constructor-button:after {
+  content: "+";
+  -webkit-transition: all 3s;
+  transition: all 0.2s;
+  width: 20px;
+}
+.constructor-button:hover:after {
+  content: "ADD TO CART";
+  width: 300px;
+}
+.footer {
+  background: url("img/footer.png") no-repeat;
+  background-size: 100%;
+  min-height: 788px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+.footer__wrap {
+  width: 50%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__column p {
+  display: flex;
+  justify-self: flex-end;
+  color: white;
+}
+.footer__img {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin-right: 25px;
+  bottom: 5px;
+}
+.footer__text-label {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 30px;
+}
+.footer__column-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.footer__links-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.footer__links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__links--img {
+  margin-right: 20px;
+  height: 50px;
+  width: 50px;
 }
 html {
   font-size: 15px;

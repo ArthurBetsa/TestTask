@@ -33,7 +33,11 @@
                 <div class="top__menu">
                     <p class="top__text">Details</p>
                 </div>
-            </div>          <!--  header top (basket) end-->
+            </div>               <!--  header top (basket) end-->
+
+            <div class="basket">
+
+            </div>
         </div>              <!-- header top end-->
 
 
@@ -68,7 +72,8 @@
         <div class="intro">
 
             <div class="intro__description">
-                <p class="intro__description--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cumque
+                <p class="intro__description--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Aspernatur, cumque
                     deleniti dicta error impedit maiores molestiae molestias odit omnis quae quidem quos unde.</p>
             </div>
 
@@ -87,7 +92,6 @@
 </header>
 
 
-
 <div class="main">
 
     <!--about cracker-->
@@ -95,27 +99,28 @@
         <div class="cracker__textWrap">
             <h2 class="cracker__intro">About cracker</h2>
             <div class="cracker__about">
-                <p class="cracker__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi
-                    impedit ipsum nobis, officiis rerum veniam. Aliquid architecto beatae corporis illo magnam minus nam
-                    nemo neque officia perferendis provident quasi, quidem quis repellat, repellendus tempore vitae.
-                    Aliquam autem blanditiis consequatur cumque cupiditate error fugit, incidunt, ipsa labore nostrum
-                    odit officia officiis perferendis porro quam quisquam, repellendus reprehenderit velit voluptate
-                    voluptatem! Adipisci aliquid aut dolore molestias sit voluptate! Adipisci atque distinctio dolorum
-                    facere laudantium nostrum recusandae? Adipisci asperiores corporis delectus, dolore ea enim est
-                    excepturi facere harum molestiae mollitia porro rem!</p>
-                <div class="cracker__logo">
-                    <img src="#" alt="" class="logo__img">
-                </div>
+                <p class="cracker__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis
+                    maiores necessitatibus quas vero! Ad, deleniti dolorem fuga non provident rem sunt totam unde?
+                    Aperiam blanditiis deleniti deserunt dolores et ex facere facilis impedit magnam maiores maxime
+                    mollitia necessitatibus nihil, nulla placeat quod quos reiciendis repellendus ut voluptatem? Animi
+                    cupiditate dolore eligendi fugiat inventore nisi qui? Ad assumenda explicabo id itaque quas quidem
+                    rem saepe tenetur. Asperiores consequuntur cupiditate doloremque enim fuga hic odit omnis, quo,
+                    temporibus unde voluptatibus.</p>
             </div>
+        </div>
+        <div class="cracker__dish">
+            <img src="img/round.png" alt="" class="dish__img">
         </div>
     </div><!--about cracker   end-->
 
     <!--    cracker constructor-->
     <div class="constructor">
         <h2 class="constructor__title">Cracker constructor</h2>
-        <div class="constructor__value">
-            <p class="constructor__value--title">Curent value:</p>
-            <p class="constructor__value--price">0€</p>
+        <div class="constructor__value-top">
+            <p class="constructor__value-top--title">Current value:&#8195;
+                <span
+                        class="constructor__value-top--price">143 €</span>
+            </p>
         </div>
 
         <!--form constructor-->
@@ -123,32 +128,37 @@
 
             <form action="" class="constructor__form">
                 <div class="form__inputWrap">
-                    <label for="soy" class="constructor__label"></label>
+                    <label id="soy_img" for="soy" class="constructor__label"></label>
                     <input type="range" id="soy" class="constructor__range">
-                    <div class="constructor__value" id="soy__value">0%</div>
+                    <div class="constructor__value" id="soy__value">10%</div>
                 </div>
                 <div class="form__inputWrap">
-                    <label for="sesame" class="constructor__label"></label>
+                    <label id="sesame_img" for="sesame" class="constructor__label"></label>
                     <input type="range" id="sesame" class="constructor__range">
-                    <div class="constructor__value" id="sesame__value">0%</div>
+                    <div class="constructor__value" id="sesame__value">36%</div>
                 </div>
                 <div class="form__inputWrap">
-                    <label for="wheat" class="constructor__label"></label>
+                    <label id="wheat_img" for="wheat" class="constructor__label"></label>
                     <input type="range" id="wheat" class="constructor__range">
-                    <div class="constructor__value" id="wheat__value">0%</div>
+                    <div class="constructor__value" id="wheat__value">14%</div>
                 </div>
                 <div class="form__inputWrap">
-                    <label for="corn" class="constructor__label"></label>
+                    <label id="corn_img" for="corn" class="constructor__label"></label>
                     <input type="range" id="corn" class="constructor__range">
-                    <div class="constructor__value" id="corn__value">0%</div>
+                    <div class="constructor__value" id="corn__value">40%</div>
                 </div>
-                <div class="form__inputWrap">
-                    <label for="package" class="constructor__label"></label>
-                    <input type="range" id="package" class="constructor__range">
-                    <div class="constructor__value" id="package__value">0%</div>
+                <div class="form__input-Select">
+                    <label id="package_img" for="package" class="constructor__label"></label>
+                    <select id="package" data-selected="">
+                        <option value="" disabled="disabled">Choose your pack</option>
+                        <option selected="selected" value="1">Small pack</option>
+                        <option value="2">Medium pack</option>
+                        <option value="3">Large pack</option>
+
+                    </select>
                 </div>
 
-                <button id="constructor-order" class="constructor-button">button</button>
+                <button id="constructor-order" class="constructor-button"></button>
             </form>
 
         </div>          <!--form constructor end-->
@@ -163,32 +173,46 @@
 <footer class="footer">
     <div class="footer__wrap">
         <div class="footer__column">
-            <img src="" alt="" class="footer__img">
-            <p class="footer__text-label">Phone</p>
-            <p class="footer__text-description"></p>
-        </div>
-        <div class="footer__column">
-            <img src="" alt="" class="footer__img">
-            <p class=" footer__text-label">Address</p>
-            <p class="footer__text-description"></p>
-        </div>
-        <div class="footer__column">
-            <img src="" alt="" class="footer__img">
-            <p class="footer__text-label">Share us</p>
-            <div class="footer__links-wrap">
-                <a href="" class="footer__links">
-                    <img src="" alt="" class="footer__img--links">
-                    <p class="footer__text-description">https://www.pinterest.com/</p>
-                </a>
-                <a href="" class="footer__links">
-                    <img src="" alt="" class="footer__img--links">
-                    <p class="footer__text-description">https://www.facebook.com/</p>
-                </a>
-                <a href="" class="footer__links">
-                    <img src="" alt="" class="footer__img--links">
-                    <p class="footer__text-description">https://www.google.com/</p>
-                </a>
+            <img src="img/f-phone.png" alt="" class="footer__img">
+            <div class="footer__column-wrap">
+                <p class="footer__text-label">Phone</p>
+                <p class="footer__text-description">+43(987)345-6782</p>
             </div>
+        </div>
+        <div class="footer__column">
+            <img src="img/f-map-marker.png" alt="" class="footer__img">
+
+            <div class="footer__column-wrap">
+                <p class=" footer__text-label">Address</p>
+                <p class="footer__text-description">Cracker Inc.</p>
+                <p class="footer__text-description">10 Cloverfield</p>
+                <p class="footer__text-description">Berlin, IL 10928</p>
+                <p class="footer__text-description">Germany</p>
+            </div>
+
+
+        </div>
+        <div class="footer__column">
+            <img src="img/f-share-alt.png" alt="" class="footer__img">
+
+            <div class="footer__column-wrap">
+                <p class="footer__text-label">Share us</p>
+                <div class="footer__links-wrap">
+                    <a href="" class="footer__links">
+                        <img src="img/f-P.png" alt="" class="footer__links--img">
+                        <p class="footer__text-description">https://www.pinterest.com/</p>
+                    </a>
+                    <a href="" class="footer__links">
+                        <img src="img/f-F.png" alt="" class="footer__links--img">
+                        <p class="footer__text-description">https://www.facebook.com/</p>
+                    </a>
+                    <a href="" class="footer__links">
+                        <img src="img/f-G.png" alt="" class="footer__links--img">
+                        <p class="footer__text-description">https://www.google.com/</p>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </footer>
