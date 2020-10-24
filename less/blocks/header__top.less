@@ -13,14 +13,15 @@
 }
 
 .header__top {
+  position: relative;
   width: 100%;
-  background-color: #333333;
   padding-top: 30px;
   padding-bottom: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
 
+  align-items: center;
+  background-color: #333333;
   color: white;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
@@ -29,11 +30,12 @@
 
 .top__menu-wrap {
   //padding: 15px 0;
-  width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-end;
+  width: 50%;
+
   align-items: center;
 }
 
@@ -70,17 +72,19 @@
 }
 
 .red-round {
-
+  position: relative;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background-color: red;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: bottom;
   top: -10px;
   right: 10px;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  vertical-align: bottom;
+
+  border-radius: 50%;
+  background-color: red;
 
 }
