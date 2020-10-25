@@ -21,7 +21,7 @@
   align-self: center;
   padding-top: 50px;
   padding-bottom: 60px;
-
+  text-align: center;
 }
 
 .constructor__value-top {
@@ -173,6 +173,10 @@ input[type=range]::-ms-track {
   }
 }
 
+#constructor-button{
+  display: flex;
+}
+
 .form__input-Select{
   display: flex;
   align-items: center;
@@ -206,29 +210,49 @@ background-color: black;
 .constructor-button{
   display: flex;
   align-self: flex-end;
+  position: relative;
+
+  padding: 20px 30px;
   outline: none;
   background: #ff4200;
-  color: white;
-  text-transform: uppercase;
-  font-size: 35px;
-  vertical-align: top;
-  text-align: center;
-  padding: 20px 30px;
   border: none;
   border-radius: 40px;
-  font-family: 'Lato', sans-serif;
-  text-decoration: none;
-  font-weight: 400;
+  cursor: pointer;
 
-  &:after{
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  vertical-align: top;
+  color: white;
+
+  &:active{
+    top: 5px;
+  }
+
+  &:before{
     content: "+";
     -webkit-transition: all 3s;
-    transition: all 0.2s;
-    width: 20px;
+    transition: all 2s;
    }
-  &:hover:after{
+  &:after{
+    //display: none;
+    position: absolute;
+    left: 230px;
     content: "ADD TO CART";
-    width: 300px;
+    -webkit-transition: all 3s;
+    transition: all 2s;
+
+  }
+
+  &:hover:before{
+    content: "";
+  }
+
+  &:hover:after{
+    position: relative;
+    left: 0;
   }
 }
 

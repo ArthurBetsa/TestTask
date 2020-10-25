@@ -24,7 +24,7 @@
   background: rgba(133, 167, 120, 0.9);
   line-height: 1.5;
 
-  &:after{
+  &:after {
     content: "";
     height: 100%;
     width: 2px;
@@ -48,10 +48,8 @@
 
 .intro__title {
   display: flex;
-  //margin: 100px auto;
+  align-self: flex-start;
   position: relative;
-  //left: 95px;
-  //top: 20px;
 
 
   &--text {
@@ -70,7 +68,7 @@
   }
 }
 
-.intro__button{
+.intro__button {
   display: flex;
   align-self: center;
   position: relative;
@@ -78,7 +76,7 @@
   right: 175px;
 
 
-  &--button{
+  &--button {
     background: rgb(255, 66, 0);
     color: white;
     text-transform: uppercase;
@@ -94,9 +92,11 @@
     line-height: 1.1;
     cursor: pointer;
     text-decoration: none;
+
     &:focus {
       outline: none;
     }
+
     &:active {
       background: rgb(255, 38, 5);
       transform: translateY(2px);

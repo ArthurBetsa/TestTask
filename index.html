@@ -30,58 +30,69 @@
                     <p class="top__text">Total: </p>
                     <p class="top__text-thin"><span id="semen__total">143</span> €</p>
                 </div>
-                <div class="top__menu">
+                <div class="top__menu" id="top_details">
                     <p class="top__text">Details</p>
                 </div>
             </div>               <!--  header top end-->
 
             <!--            basket-->
 
-            <div class="basket">
+            <div class="basket" id="basket">
                 <div class="basket__top">
-                    <div class="basket__goods">
+                    <div class="basket__goods-top">
                         <img src="img/basket/b_soy.png" alt="" id="basket-soy" class="goods__img">
                         <img src="img/basket/b_sesame.png" alt="" id="basket-sesame" class="goods__img">
                         <img src="img/basket/b_wheat.png" alt="" id="basket-wheat" class="goods__img">
                         <img src="img/basket/b_corn.png" alt="" id="basket-corn" class="goods__img">
                     </div>
-                    <div class="close--basket"></div>
+                    <div class="close--basket" id="close-basket"></div>
                 </div>
 
+                <!--                basket__goods-container start-->
+                <div class="basket__goods-container" id="basket__container">
+                    <div class="basket__goods">
+                        <img src="img/basket/b_semen.png" alt="" class="basket__seed">
+                        <div class="goods__wrap">
+                            <div class="basket__goods-list">
+                                <div class="percent__wrap">
+                                    <p class="percents--soy">4</p>
+                                    <span class="basket__percent">%</span>
+                                </div>
+                                <div class="percent__wrap">
+                                    <p class="percents--sesame">15</p>
+                                    <span class="basket__percent">%</span>
+                                </div>
+                                <div class="percent__wrap">
+                                    <p class="percents--wheat">61</p>
+                                    <span class="basket__percent">%</span>
+                                </div>
+                                <div class="percent__wrap">
+                                    <p class="percents--corn">20</p>
+                                    <span class="basket__percent">%</span>
+                                </div>
+                            </div>
+                            <div class="goods__info-wrap">
+                                <div class="goods__info-container">
+                                    <p class="basket__package-volume">150</p>
+                                    <p class="basket__package-scale">Kg</p>
+                                </div>
+                                <div class="goods__info-container">
+                                    <p class="basket__sum">81.50</p>
+                                    <span class="currency">€</span>
+                                </div>
+                            </div>
 
-                <div class="basket__goods-container">
-                    <img src="img/basket/b_semen.png" alt="" class="basket__seed">
-                    <div class="goods__wrap">
-                        <div class="basket__goods-list">
-                            <div class="percent__wrap">
-                                <p class="percents--soy">4</p>
-                                <span class="basket__percent">%</span>
-                            </div>
-                            <div class="percent__wrap">
-                                <p class="percents--sesame">15</p>
-                                <span class="basket__percent">%</span>
-                            </div>
-                            <div class="percent__wrap">
-                                <p class="percents--wheat">61</p>
-                                <span class="basket__percent">%</span>
-                            </div>
-                            <div class="percent__wrap">
-                                <p class="percents--corn">20</p>
-                                <span class="basket__percent">%</span>
-                            </div>
                         </div>
-                        <p class="basket__package-volume">150</p>
-                        <p class="basket__package-scale">Kg</p>
-                        <p class="basket__sum">81.50</p>
-                        <span class="currency">€</span>
+                        <div class="delete__goods"></div>
                     </div>
-                    <div class="delete__goods">++</div>
-                </div>
+                </div><!--                basket__goods-container end-->
+
 
                 <div class="basket__bottom">
                     <div class="basket__total-container">
-                        <p class="basket__text">Total</p>
-                        <p id="basket__total-sum" class="basket__text">Total</p>
+                        <p class="basket__text">Total:</p>
+                        <p id="basket__total-sum" class="basket__text">143</p>
+                        <span class="currency">€</span>
                     </div>
                     <button id="basket__checkout">Checkout</button>
                 </div>
@@ -176,26 +187,26 @@
         <!--form constructor-->
         <div class="constructor__formWrap">
 
-            <form action="" class="constructor__form">
+            <form action="" id="constructor_form" class="constructor__form">
                 <div class="form__inputWrap">
                     <label id="soy_img" for="soy" class="constructor__label"></label>
                     <input type="range" id="soy" class="constructor__range">
-                    <div class="constructor__value" id="soy__value">10%</div>
+                    <div class="constructor__value" id="soy__value">50%</div>
                 </div>
                 <div class="form__inputWrap">
                     <label id="sesame_img" for="sesame" class="constructor__label"></label>
                     <input type="range" id="sesame" class="constructor__range">
-                    <div class="constructor__value" id="sesame__value">36%</div>
+                    <div class="constructor__value" id="sesame__value">50%</div>
                 </div>
                 <div class="form__inputWrap">
                     <label id="wheat_img" for="wheat" class="constructor__label"></label>
                     <input type="range" id="wheat" class="constructor__range">
-                    <div class="constructor__value" id="wheat__value">14%</div>
+                    <div class="constructor__value" id="wheat__value">50%</div>
                 </div>
                 <div class="form__inputWrap">
                     <label id="corn_img" for="corn" class="constructor__label"></label>
                     <input type="range" id="corn" class="constructor__range">
-                    <div class="constructor__value" id="corn__value">40%</div>
+                    <div class="constructor__value" id="corn__value">50%</div>
                 </div>
                 <div class="form__input-Select">
                     <label id="package_img" for="package" class="constructor__label"></label>
@@ -207,8 +218,10 @@
 
                     </select>
                 </div>
-
+                <!--                <div id="constructor-button">-->
                 <button id="constructor-order" class="constructor-button"></button>
+
+                <!--                </div>-->
             </form>
 
         </div>          <!--form constructor end-->
