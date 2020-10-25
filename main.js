@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
         unicID: () => Math.random().toString(36).substr(2, 9),
         detailBasket: () => document.getElementById("top_details"),
         closeBasketNode: () => document.getElementById("close-basket"),
+        topSeed: () => document.getElementById("red_round"),
     };
 
     let form = document.querySelector("#constructor_form");
@@ -23,19 +24,20 @@ window.addEventListener('load', () => {
 // change input % value
 
     let changePercents = event => {
-        if (event.target.type === "range") {
-            listenerNodes.rangeInputValues().map(value => {
-                let idToChange = `${value.id}__value`;
-                document.getElementById(idToChange).innerText = value.value + "%";
+        // if (event.target.type === "range") {
+            listenerNodes.rangeInputValues().map(inputNode => {
+                let idToChange = `${inputNode.id}__value`;
+                document.getElementById(idToChange).innerText = inputNode.value + "%";
             });
-        }
+        // }
     };
     // change input % value end
     form.addEventListener("change", event => changePercents(event));
 
     // form's remainder controller
-    form.addEventListener("change", (event) => {
-        if (event.target.type === "range" && event.target.id !== "corn") {
+
+    let formController = (event) => {
+        // if (event.target.type === "range" && event.target.id !== "corn") {
 
             let cornValue = document.getElementById("corn");
             let rangeValSum = listenerNodes.rangeInputValues().slice(0, -1)
@@ -48,8 +50,11 @@ window.addEventListener('load', () => {
                 cornValue.value = 0;
             }
             changePercents(event);
-        }
-    });
+        // }
+    };
+
+    formController(event);
+    form.addEventListener("change", event=>formController(event));
 
 
     // toggle basket
@@ -73,7 +78,7 @@ window.addEventListener('load', () => {
                         LocalStorage!
      _______________________________________________________________
     */
-    // send form's data to lockal storage
+    // send form's data to local storage
     listenerNodes.formSubmit()
         .addEventListener("click", (event) => {
             event.preventDefault();
@@ -157,6 +162,10 @@ window.addEventListener('load', () => {
             }
         });
 
+        // change top seed value
+
+        listenerNodes.topSeed().innerText = localStorage.length;
+
     };
 
 
@@ -176,32 +185,3 @@ window.addEventListener('load', () => {
 });
 
 
-/*
-
-      let allLockal = function allStorage() {
-
-                var archive = [];
-                for (var i = 0; i<localStorage.length; i++) {
-                    let idObj ={};
-                    idObj[localStorage.key(i)] = JSON.parse(localStorage.getItem(localStorage.key(i)));
-                    archive[i] = idObj;
-                }
-
-                return archive;
-            };
-
-            let checkVal = allLockal();
-            let objKey = Object.keys(checkVal[1]);
-            let obj = checkVal[1];
-            console.log(obj[objKey].corn);
-
-            _________________
-
-            let allLockal = function allStorage() {
-                const archive = [];
-                for (let i = 0; i<localStorage.length; i++) {
-                    archive[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
-                }
-                return archive;
-            };
- */
