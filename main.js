@@ -13,8 +13,6 @@ window.addEventListener('load', () => {
         closeBasketNode: () => document.getElementById("close-basket"),
     };
 
-    console.log(listenerNodes.rangeInputValues());
-
     let form = document.querySelector("#constructor_form");
 
 
@@ -89,6 +87,9 @@ window.addEventListener('load', () => {
 
             let serialObj = JSON.stringify(dataFromForm);
             localStorage.setItem(dataFromForm.id, serialObj);
+
+            renderBasket();
+
         });
 
 
@@ -96,7 +97,7 @@ window.addEventListener('load', () => {
 
     let renderBasket = () => {
         let basket = listenerNodes.basketContainer();
-
+        basket.innerHTML ="";
         let allFromLockal = () => {
             const archive = [];
             for (let i = 0; i < localStorage.length; i++) {
@@ -157,6 +158,18 @@ window.addEventListener('load', () => {
         });
 
     };
+
+
+    // delete from Basket/localStorage
+
+    listenerNodes.basketContainer().addEventListener("click", event=>deleteFromBasket(event));
+    
+    let deleteFromBasket = (event)=>{
+    let id = event.target.parentNode.id;
+       window.localStorage.removeItem(id);
+        renderBasket();
+    };
+
 
     renderBasket();
 
