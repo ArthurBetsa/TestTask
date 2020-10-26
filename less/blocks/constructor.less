@@ -61,7 +61,7 @@
 
 }
 
-.constructor__form{
+.constructor__form {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -173,11 +173,11 @@ input[type=range]::-ms-track {
   }
 }
 
-#constructor-button{
+#constructor-button {
   display: flex;
 }
 
-.form__input-Select{
+.form__input-Select {
   display: flex;
   align-items: center;
   position: relative;
@@ -195,10 +195,17 @@ input[type=range]::-ms-track {
   font-size: 20px;
   color: #ff3300;
   left: 90px;
+  text-align-last: center;
 
   option:active {
-background-color: black;
+    background-color: black;
   }
+
+}
+
+option{
+  display: flex;
+  text-align-last: center;
 
 }
 
@@ -207,10 +214,35 @@ background-color: black;
   border: none;
 }
 
-.constructor-button{
+
+.constructor-button-wrap {
+  position: relative;
+  width: 87px;
+  height: 85px;
+
   display: flex;
   align-self: flex-end;
-  position: relative;
+  overflow: hidden;
+
+  border-radius: 40px;
+  //background: #ff4200;
+  transition: all 2s;
+
+
+  &:hover {
+    width: 287px;
+  }
+}
+
+
+.constructor-button {
+  display: flex;
+  align-self: flex-end;
+
+
+  position: absolute;
+  width: 287px;
+  height: 82px;
 
   padding: 20px 30px;
   outline: none;
@@ -226,35 +258,37 @@ background-color: black;
   font-size: 35px;
   vertical-align: top;
   color: white;
+  left: 90px;
 
-  &:active{
+  margin-left: 0;
+
+
+  &:hover{
+    margin-left: -90px;
+  }
+  &:active {
     top: 5px;
   }
 
-  &:before{
-    content: "+";
-    -webkit-transition: all 3s;
-    transition: all 2s;
-   }
-  &:after{
-    //display: none;
+  &:before {
+    background: #ff4200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    left: -85px;
+    top: 0;
     position: absolute;
-    left: 230px;
-    content: "ADD TO CART";
-    -webkit-transition: all 3s;
+
+    content: "+";
     transition: all 2s;
 
+    right: 52px;
   }
 
-  &:hover:before{
-    content: "";
-  }
 
-  &:hover:after{
-    position: relative;
-    left: 0;
-  }
 }
-
-
 

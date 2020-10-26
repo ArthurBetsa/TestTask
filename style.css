@@ -15,6 +15,7 @@ header {
 }
 .header__top {
   position: relative;
+  flex: 1 1 auto;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 15px;
@@ -90,7 +91,18 @@ header {
   background-color: rgba(55, 55, 55, 0.6);
 }
 .header__logo {
-  display: none;
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  top: -40px;
+  left: 15%;
+  color: white;
+}
+.cracker__logo-wrap {
+  display: flex;
+  align-self: flex-end;
+  position: relative;
+  bottom: -25px;
 }
 .header__nav-container {
   width: 50%;
@@ -284,6 +296,20 @@ header {
   left: 420px;
   z-index: 0;
 }
+.crecker__logo {
+  font-family: 'Kristi', cursive;
+  font-size: 55px;
+  margin: 0;
+}
+.logo-subLogo {
+  margin: 0;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: white;
+  bottom: -15px;
+  right: 15px;
+}
 .constructor {
   display: flex;
   align-items: center;
@@ -440,18 +466,38 @@ input[type=range]::-ms-track {
   font-size: 20px;
   color: #ff3300;
   left: 90px;
+  text-align-last: center;
 }
 #package option:active {
   background-color: black;
+}
+option {
+  display: flex;
+  text-align-last: center;
 }
 #package-selected {
   background-color: white;
   border: none;
 }
+.constructor-button-wrap {
+  position: relative;
+  width: 87px;
+  height: 85px;
+  display: flex;
+  align-self: flex-end;
+  overflow: hidden;
+  border-radius: 40px;
+  transition: all 2s;
+}
+.constructor-button-wrap:hover {
+  width: 287px;
+}
 .constructor-button {
   display: flex;
   align-self: flex-end;
-  position: relative;
+  position: absolute;
+  width: 287px;
+  height: 82px;
   padding: 20px 30px;
   outline: none;
   background: #ff4200;
@@ -465,28 +511,29 @@ input[type=range]::-ms-track {
   font-size: 35px;
   vertical-align: top;
   color: white;
+  left: 90px;
+  margin-left: 0;
+}
+.constructor-button:hover {
+  margin-left: -90px;
 }
 .constructor-button:active {
   top: 5px;
 }
 .constructor-button:before {
-  content: "+";
-  -webkit-transition: all 3s;
-  transition: all 2s;
-}
-.constructor-button:after {
+  background: #ff4200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  left: -85px;
+  top: 0;
   position: absolute;
-  left: 230px;
-  content: "ADD TO CART";
-  -webkit-transition: all 3s;
+  content: "+";
   transition: all 2s;
-}
-.constructor-button:hover:before {
-  content: "";
-}
-.constructor-button:hover:after {
-  position: relative;
-  left: 0;
+  right: 52px;
 }
 .footer {
   background: url("img/footer.png") no-repeat;
