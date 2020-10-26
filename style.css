@@ -81,6 +81,24 @@ header {
 #top_details:active {
   top: 5px;
 }
+#top_details:before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  height: 15px;
+  width: 3px;
+  right: -26px;
+  transform: rotate(-45deg);
+}
+#top_details:after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  height: 15px;
+  width: 3px;
+  right: -35px;
+  transform: rotate(45deg);
+}
 .header__main {
   position: relative;
   display: flex;

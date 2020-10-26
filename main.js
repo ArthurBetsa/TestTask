@@ -12,9 +12,21 @@ window.addEventListener('load', () => {
         detailBasket: () => document.getElementById("top_details"),
         closeBasketNode: () => document.getElementById("close-basket"),
         topSeed: () => document.getElementById("red_round"),
+        form: () => document.querySelector("#constructor_form"),
+        constructorTotal: () => document.querySelector("#constructor-total-price"),
+        sumInerBasket: () => document.querySelector("#basket__total-sum"),
+        sumOutBasket: () => document.querySelector("#semen__total"),
     };
 
-    let form = document.querySelector("#constructor_form");
+    let priceValues = {
+        soy: 10,
+        sesame: 8,
+        wheat: 6,
+        corn: 4,
+        smallPackage: 1,
+        mediumPackage: 50,
+        largePackage: 150,
+    };
 
 
 //       form function controllers
@@ -25,36 +37,91 @@ window.addEventListener('load', () => {
 
     let changePercents = event => {
         // if (event.target.type === "range") {
-            listenerNodes.rangeInputValues().map(inputNode => {
-                let idToChange = `${inputNode.id}__value`;
-                document.getElementById(idToChange).innerText = inputNode.value + "%";
-            });
+        listenerNodes.rangeInputValues().map(inputNode => {
+            let idToChange = `${inputNode.id}__value`;
+            document.getElementById(idToChange).innerText = inputNode.value + "%";
+        });
         // }
     };
-    // change input % value end
-    form.addEventListener("change", event => changePercents(event));
+    listenerNodes.form().addEventListener("change", event => changePercents(event));
+
+
+    // package price translate input values to weight
+    let packagePrice = () => {
+        if (listenerNodes.packageNode().value * 1 === 1) return priceValues.smallPackage;
+        if (listenerNodes.packageNode().value * 1 === 2) return priceValues.mediumPackage;
+        if (listenerNodes.packageNode().value * 1 === 3) return priceValues.largePackage;
+
+    };
+
+    // change constructor current value
+
+    let constructorCurrentValue = () => {
+        //get value of range inputs, change to real price by 1 kilo and pow to  package weight price
+
+        let sum = listenerNodes.rangeInputValues()
+            .reduce((accumulator, node) => (
+                accumulator + (node.value * priceValues[node.id])
+            ), 0);
+        return Math.round((100 * sum * packagePrice()) / 100) / 100;
+    };
+
 
     // form's remainder controller
 
     let formController = (event) => {
         // if (event.target.type === "range" && event.target.id !== "corn") {
 
-            let cornValue = document.getElementById("corn");
-            let rangeValSum = listenerNodes.rangeInputValues().slice(0, -1)
-                .reduce((sum, val) => sum + 1 * val.value, 0);
+        let cornValue = document.getElementById("corn");
+        let rangeWithoutCorn = listenerNodes.rangeInputValues().slice(0, -1);
+        let rangeValSum = rangeWithoutCorn.reduce((sum, val) => sum + 1 * val.value, 0);
 
-            // set remainder in corn
-            if (rangeValSum <= 100) {
-                cornValue.value = 100 - rangeValSum;
-            } else {
-                cornValue.value = 0;
-            }
-            changePercents(event);
+
+        // set remainder in corn
+
+        if (rangeValSum <= 100) {
+            cornValue.value = 100 - rangeValSum;
+        } else {
+            cornValue.value = 0;
+        }
+
+
+        // check for sum not more than 100%
+
+        let overFlow = 0;
+
+        if (rangeValSum > 100) {
+            overFlow = rangeValSum - 100;
+
+            rangeWithoutCorn.map(node => {
+                if (node.id !== event.target.id && event.target.type === "range") {
+
+                    let fluent = event.target.value - overFlow;
+                    overFlow = overFlow - event.target.value;
+                    event.target.value = fluent;
+
+                    if (overFlow < 0) {
+                        overFlow = 0;
+                    }
+                }
+            });
+
+        }
+
+
+
+        // rerender % value in html
+        changePercents(event);
+        // rerender current value of price above constructor
+        listenerNodes.constructorTotal()
+            .innerHTML = constructorCurrentValue() + " €";
+
+
         // }
     };
 
     formController(event);
-    form.addEventListener("change", event=>formController(event));
+    listenerNodes.form().addEventListener("change", event => formController(event));
 
 
     // toggle basket
@@ -63,15 +130,10 @@ window.addEventListener('load', () => {
         listenerNodes.basketNode().style.display = "flex";
         renderBasket();
     };
-    let closeBasket = () => {
-        listenerNodes.basketNode().style.display = "none";
+    let closeBasket = () => listenerNodes.basketNode().style.display = "none";
 
-    };
-
-    listenerNodes.detailBasket()
-        .addEventListener("click", () => openBasket());
-    listenerNodes.closeBasketNode()
-        .addEventListener("click", () => closeBasket());
+    listenerNodes.detailBasket().addEventListener("click", () => openBasket());
+    listenerNodes.closeBasketNode().addEventListener("click", () => closeBasket());
 
 
     /* _______________________________________________________________
@@ -84,8 +146,9 @@ window.addEventListener('load', () => {
             event.preventDefault();
 
             let dataFromForm = {
-                packageValue: listenerNodes.packageNode().value,
+                packageValue: packagePrice(),
                 id: listenerNodes.unicID(),
+                totalPrice: constructorCurrentValue(),
             };
             listenerNodes.rangeInputValues()
                 .map(value => dataFromForm[value.id] = value.value);
@@ -102,7 +165,7 @@ window.addEventListener('load', () => {
 
     let renderBasket = () => {
         let basket = listenerNodes.basketContainer();
-        basket.innerHTML ="";
+        basket.innerHTML = "";
         let allFromLockal = () => {
             const archive = [];
             for (let i = 0; i < localStorage.length; i++) {
@@ -145,7 +208,7 @@ window.addEventListener('load', () => {
                                     <p class="basket__package-scale">Kg</p>
                                 </div>
                                 <div class="goods__info-container">
-                                    <p class="basket__sum">5</p>
+                                    <p class="basket__sum">${value.totalPrice}</p>
                                     <span class="currency">€</span>
                                 </div>
                             </div>
@@ -166,16 +229,27 @@ window.addEventListener('load', () => {
 
         listenerNodes.topSeed().innerText = localStorage.length;
 
+// change total sum inside and outside basket
+
+        let totalSumofBasket = Math
+            .round((allLocalValues
+                    .reduce((totalSum, goods) => totalSum + 1 * goods.totalPrice, 0))
+                * 100) / 100;
+
+        listenerNodes.sumInerBasket().innerHTML = totalSumofBasket;
+        listenerNodes.sumOutBasket().innerHTML = totalSumofBasket;
+
+
     };
 
 
     // delete from Basket/localStorage
 
-    listenerNodes.basketContainer().addEventListener("click", event=>deleteFromBasket(event));
-    
-    let deleteFromBasket = (event)=>{
-    let id = event.target.parentNode.id;
-       window.localStorage.removeItem(id);
+    listenerNodes.basketContainer().addEventListener("click", event => deleteFromBasket(event));
+
+    let deleteFromBasket = (event) => {
+        let id = event.target.parentNode.id;
+        window.localStorage.removeItem(id);
         renderBasket();
     };
 

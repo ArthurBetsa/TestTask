@@ -97,5 +97,26 @@
 
   &:active {
     top: 5px;
+
   }
+
+  &:before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 15px;
+    width: 3px;
+    right: -26px;
+    transform: rotate(-45deg);
+  }
+  &:after{
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 15px;
+    width: 3px;
+    right: -35px;
+    transform: rotate(45deg);
+  }
+
 }
