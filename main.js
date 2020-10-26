@@ -2,23 +2,26 @@
 window.addEventListener('load', () => {
 
 
-    let listenerNodes = {
+    const listenerNodes = {
+
+        unicID: () => Math.random().toString(36).substr(2, 9),
+
         rangeInputValues: () => Array.from(document.querySelectorAll(".constructor__range")),
+        cornNode : () => document.getElementById("corn"),
         packageNode: () => document.getElementById("package"),
         formSubmit: () => document.getElementById("constructor-order"),
         basketNode: () => document.getElementById("basket"),
         basketContainer: () => document.getElementById("basket__container"),
-        unicID: () => Math.random().toString(36).substr(2, 9),
         detailBasket: () => document.getElementById("top_details"),
         closeBasketNode: () => document.getElementById("close-basket"),
         topSeed: () => document.getElementById("red_round"),
-        form: () => document.querySelector("#constructor_form"),
-        constructorTotal: () => document.querySelector("#constructor-total-price"),
-        sumInerBasket: () => document.querySelector("#basket__total-sum"),
-        sumOutBasket: () => document.querySelector("#semen__total"),
+        form: () => document.getElementById("constructor_form"),
+        constructorTotal: () => document.getElementById("constructor-total-price"),
+        sumInnerBasket: () => document.getElementById("basket__total-sum"),
+        sumOutBasket: () => document.getElementById("semen__total"),
     };
 
-    let priceValues = {
+    const priceValues = {
         soy: 10,
         sesame: 8,
         wheat: 6,
@@ -36,21 +39,20 @@ window.addEventListener('load', () => {
 // change input % value
 
     let changePercents = event => {
-        // if (event.target.type === "range") {
         listenerNodes.rangeInputValues().map(inputNode => {
             let idToChange = `${inputNode.id}__value`;
             document.getElementById(idToChange).innerText = inputNode.value + "%";
         });
-        // }
     };
     listenerNodes.form().addEventListener("change", event => changePercents(event));
 
 
     // package price translate input values to weight
     let packagePrice = () => {
-        if (listenerNodes.packageNode().value * 1 === 1) return priceValues.smallPackage;
-        if (listenerNodes.packageNode().value * 1 === 2) return priceValues.mediumPackage;
-        if (listenerNodes.packageNode().value * 1 === 3) return priceValues.largePackage;
+        const packageValue = 1*listenerNodes.packageNode().value;
+        if (packageValue === 1) return priceValues.smallPackage;
+        if (packageValue === 2) return priceValues.mediumPackage;
+        if (packageValue === 3) return priceValues.largePackage;
 
     };
 
@@ -70,10 +72,9 @@ window.addEventListener('load', () => {
     // form's remainder controller
 
     let formController = (event) => {
-        // if (event.target.type === "range" && event.target.id !== "corn") {
 
-        let cornValue = document.getElementById("corn");
-        let rangeWithoutCorn = listenerNodes.rangeInputValues().slice(0, -1);
+        const cornValue = listenerNodes.cornNode();
+        const rangeWithoutCorn = listenerNodes.rangeInputValues().slice(0, -1);
         let rangeValSum = rangeWithoutCorn.reduce((sum, val) => sum + 1 * val.value, 0);
 
 
@@ -161,19 +162,23 @@ window.addEventListener('load', () => {
         });
 
 
+// get localStorage data
+
+    let allFromLocal = () => {
+        const archive = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            archive[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        }
+        return archive;
+    };
+
+
     // render basket
 
     let renderBasket = () => {
         let basket = listenerNodes.basketContainer();
         basket.innerHTML = "";
-        let allFromLockal = () => {
-            const archive = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                archive[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
-            }
-            return archive;
-        };
-        let allLocalValues = allFromLockal();
+        let allLocalValues = allFromLocal();
 
         // render basket data
         allLocalValues.map(value => {
@@ -236,7 +241,7 @@ window.addEventListener('load', () => {
                     .reduce((totalSum, goods) => totalSum + 1 * goods.totalPrice, 0))
                 * 100) / 100;
 
-        listenerNodes.sumInerBasket().innerHTML = totalSumofBasket;
+        listenerNodes.sumInnerBasket().innerHTML = totalSumofBasket;
         listenerNodes.sumOutBasket().innerHTML = totalSumofBasket;
 
 
