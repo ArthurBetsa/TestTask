@@ -1,9 +1,9 @@
 .main {
   background: url("img/main-bg.png") no-repeat;
-  -moz-background-size: 100%;
-  -webkit-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   width: 100%;
 
 }
@@ -20,7 +20,7 @@
 
 }
 
-.cracker__textWrap {
+.cracker__inner-wrap {
   padding-top: 20px;
   display: flex;
   width: 100%;
@@ -33,7 +33,7 @@
 .cracker__intro {
   display: flex;
   text-transform: uppercase;
-  color: #000000;
+  color: rgb(102 102 102);
   font-family: 'Fredoka One', cursive;
   font-weight: 800;
   font-size: 44px;
@@ -42,53 +42,66 @@
   line-height: 1.38;
   position: relative;
   align-self: center;
-  left: 80px;
+  left: 10%;
 }
 
 .cracker__about {
   display: flex;
   align-self: flex-end;
-
-  padding-top: 30px;
-  padding-left: 85px;
-
   position: relative;
 
-  min-height: 360px;
-  width: 70%;
-  top: 50px;
+  width: 67%;
+  margin-top: 80px;
+
+
+}
+
+.about__wrap{
+  background-color: rgba(219, 201, 199, 0.85);
+  width: 100%;
   z-index: 1;
 
-  background-color: rgba(219, 201, 199, 0.85);
+  padding-left: 80px;
+  padding-top: 30px;
+}
 
+.about__wrap-text {
+  display: flex;
+  width: 60%;
+  @media (max-width: 1300px) {
+  width: 90%;
+  }
 }
 
 .cracker__text {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
-  width: 635px;
   line-height: 1.4;
   font-weight: 500;
   text-indent: 36px;
-}
+  text-align: justify;
 
+  padding-bottom: 50px;
+}
 
 
 .cracker__dish {
   display: flex;
   position: absolute;
-  top: 80px;
-  left: 420px;
+  top: -110px;
+  left: -180px;
   z-index: 0;
 
 }
 
-.crecker__logo{
+.cracker__logo {
   font-family: 'Kristi', cursive;
   font-size: 55px;
   margin: 0;
+  font-weight:500;
 }
-.logo-subLogo{
+
+.logo-subLogo {
   margin: 0;
   position: relative;
   font-family: 'Lato', sans-serif;

@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
         unicID: () => Math.random().toString(36).substr(2, 9),
 
         rangeInputValues: () => Array.from(document.querySelectorAll(".constructor__range")),
-        cornNode : () => document.getElementById("corn"),
+        cornNode: () => document.getElementById("corn"),
         packageNode: () => document.getElementById("package"),
         formSubmit: () => document.getElementById("constructor-order"),
         basketNode: () => document.getElementById("basket"),
@@ -19,7 +19,11 @@ window.addEventListener('load', () => {
         constructorTotal: () => document.getElementById("constructor-total-price"),
         sumInnerBasket: () => document.getElementById("basket__total-sum"),
         sumOutBasket: () => document.getElementById("semen__total"),
+        openHeaderMenu: () => document.getElementById("header__open-menu-button"),
+        closeHeaderMenu: () => document.getElementById("header__close-menu-button"),
+        headerNav: () => document.getElementById("header__nav"),
     };
+
 
     const priceValues = {
         soy: 10,
@@ -31,6 +35,31 @@ window.addEventListener('load', () => {
         largePackage: 150,
     };
 
+
+    //open/close header menu
+    let openHeader = event => {
+        event.stopPropagation();
+        listenerNodes.openHeaderMenu().style.display = "none";
+        listenerNodes.headerNav().style.display = "flex";
+    };
+    let closeHeader = event => {
+        event.stopPropagation();
+        listenerNodes.openHeaderMenu().style.display = "flex";
+        listenerNodes.headerNav().style.display = "none";
+    };
+
+    let shoveMenuResize = event =>{
+        if(window.innerWidth<=1300){
+            closeHeader(event);
+        }
+        if(window.innerWidth>1300){
+            openHeader(event);
+        }
+    };
+
+    listenerNodes.openHeaderMenu().addEventListener("click", event => openHeader(event));
+    listenerNodes.closeHeaderMenu().addEventListener("click", event => closeHeader(event));
+    window.addEventListener("resize", event => shoveMenuResize(event));
 
 //       form function controllers
 //       __________________________
@@ -49,7 +78,7 @@ window.addEventListener('load', () => {
 
     // package price translate input values to weight
     let packagePrice = () => {
-        const packageValue = 1*listenerNodes.packageNode().value;
+        const packageValue = 1 * listenerNodes.packageNode().value;
         if (packageValue === 1) return priceValues.smallPackage;
         if (packageValue === 2) return priceValues.mediumPackage;
         if (packageValue === 3) return priceValues.largePackage;
@@ -75,7 +104,8 @@ window.addEventListener('load', () => {
 
         const cornValue = listenerNodes.cornNode();
         const rangeWithoutCorn = listenerNodes.rangeInputValues().slice(0, -1);
-        let rangeValSum = rangeWithoutCorn.reduce((sum, val) => sum + 1 * val.value, 0);
+        let rangeValSum = rangeWithoutCorn
+            .reduce((sum, val) => sum + 1 * val.value, 0);
 
 
         // set remainder in corn
@@ -108,7 +138,6 @@ window.addEventListener('load', () => {
             });
 
         }
-
 
 
         // rerender % value in html
@@ -151,6 +180,7 @@ window.addEventListener('load', () => {
                 id: listenerNodes.unicID(),
                 totalPrice: constructorCurrentValue(),
             };
+
             listenerNodes.rangeInputValues()
                 .map(value => dataFromForm[value.id] = value.value);
 
@@ -169,7 +199,7 @@ window.addEventListener('load', () => {
         for (let i = 0; i < localStorage.length; i++) {
             archive[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
         }
-        return archive;
+        return archive.filter(value => value.hasOwnProperty("packageValue"));
     };
 
 
@@ -232,7 +262,7 @@ window.addEventListener('load', () => {
 
         // change top seed value
 
-        listenerNodes.topSeed().innerText = localStorage.length;
+        listenerNodes.topSeed().innerText = allFromLocal().length;
 
 // change total sum inside and outside basket
 
@@ -253,6 +283,8 @@ window.addEventListener('load', () => {
     listenerNodes.basketContainer().addEventListener("click", event => deleteFromBasket(event));
 
     let deleteFromBasket = (event) => {
+        event.stopPropagation();
+        if (event.target.className !== "delete__goods") return false;
         let id = event.target.parentNode.id;
         window.localStorage.removeItem(id);
         renderBasket();
