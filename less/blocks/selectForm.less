@@ -1,6 +1,10 @@
 .select-form{
+  display: flex;
   position: relative;
   margin-left: 10%;
+  flex-direction: column;
+  justify-content: center;
+
   @media (max-width: 1300px) {
     margin-left: 14%;
   }
@@ -8,25 +12,25 @@
 
 
 .customSelect{
-  width: 300px;
+  width: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid #ff3300;
   border-radius: 30px;
-  padding: 20px;
+  padding: 5px;
 
   text-transform: uppercase;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 800;
   color: #ff3300;
 }
 
 .open{
   display: none;
   position: absolute;
-  width: 300px;
-
+  width: 430px;
+  top: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -36,15 +40,15 @@
   padding: 20px 30px;
 
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 600;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 4;
   #option-selected{
 
     border-bottom: 2px solid #ff3300 ;
     border-top: 2px solid #ff3300 ;
-    background-color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(165, 165, 165, 0.9);
   }
 
 }
@@ -54,14 +58,14 @@
 }
 
 .inner-option{
-
-
   width: 100%;
 
   padding-top:  10px;
   padding-bottom:  10px;
   color: #ff3300;
   text-align: center;
+
+
   &:hover{
     background-color: rgba(220, 220, 220, 0.85);
   }
@@ -72,7 +76,7 @@
 
 
   width: 100%;
-  color: #b7b7b7;
+  color: #959595;
   text-align: center;
   margin-bottom: 10px;
 }
