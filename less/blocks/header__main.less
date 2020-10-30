@@ -6,34 +6,34 @@
   align-items: center;
   width: 100%;
 
-  background-color: rgba(55, 55, 55, 0.6);
+  background-color: rgba(32, 32, 32, 0.6);
 
   @media (max-width: 1300px) {
     position: fixed;
     z-index: 9999;
     display: none;
     top: 100px;
-    background-color: rgba(55, 55, 55, 0.9);
+    background-color: rgba(24, 24, 24, 0.85);
   }
 }
 
 
-#header__open-menu-button{
+#header__open-menu-button {
   display: none;
 
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: fixed;
-  right: 50px;
+  right: 10px;
   top: 100px;
   cursor: pointer;
   color: white;
 
   padding: 5px;
-  background-color: rgba(55, 55, 55, 0.9); ;
+  background-color: rgba(55, 55, 55, 0.9);;
 
-  &:active{
+  &:active {
     top: 105px;
   }
 
@@ -43,7 +43,8 @@
   font-size: 20px;
 
   z-index: 99999;
-  span{
+
+  span {
     display: block;
     width: 35px;
     height: 5px;
@@ -59,13 +60,13 @@
 #header__close-menu-button {
   display: none;
   position: absolute;
-  right: 10px;
-  top: 10px;
-  height: 100px;
-  width: 100px;
+  right: 25px;
+  top: 25px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
 
-  &:active{
+  &:active {
     top: 15px;
   }
 
@@ -74,10 +75,10 @@
     background-color: white;
     width: 2px;
     position: absolute;
-    height: 80px;
+    height: 50px;
     transform: rotate(45deg);
-    right: 48px;
-    top: 10px;
+    right: 25px;
+
   }
 
   &:after {
@@ -85,10 +86,10 @@
     background-color: white;
     width: 2px;
     position: absolute;
-    height: 80px;
+    height: 50px;
     transform: rotate(-45deg);
-    right: 48px;
-    top: 10px;
+    right: 25px;
+
   }
 
   @media (max-width: 1300px) {
@@ -96,33 +97,28 @@
   }
 }
 
-.header__logo {
-  display: flex;
-  align-items: baseline;
-  position: absolute;
-  bottom: -25px;
-  left: 15%;
-  color: white;
-  z-index: 4;
-}
 
 .cracker__logo-wrap {
   display: flex;
   align-self: flex-end;
-  position: relative;
-  bottom: -25px;
-  right: 50px;
-
-
+  position: absolute;
+  bottom: -35px;
+  right: 50%;
 }
 
+#cracker__about-logo{
+  font-size: 20px;
+}
 
 .header__nav-container {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 
+  position: relative;
+
+  left: 80px;
   padding: 20px 0;
 
 }
@@ -142,28 +138,29 @@
 }
 
 .header__nav-page {
-  padding: 0 15px;
+  display: flex;
+  justify-content: center;
   position: relative;
-  margin: 15px 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
   a {
     text-decoration: none;
     color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 300;
+    font-size: 18px;
     text-transform: uppercase;
   }
 
   &--active {
     &:after {
       content: "";
-      width: 100%;
+      width: 120px;
       height: 3px;
       background-color: #ff3300;
       position: absolute;
       bottom: -15px;
-      left: 0;
     }
   }
 

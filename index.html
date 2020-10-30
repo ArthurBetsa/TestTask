@@ -20,7 +20,7 @@
         <!--header top-->
         <div class="header__top">
             <div class="header__logo">
-                <p class="cracker__logo">Crecker</p>
+                <p class="cracker__logo">Cracker</p>
                 <p class="logo-subLogo">logo</p>
             </div>
 
@@ -116,7 +116,7 @@
         <div class="header__main" id="header__nav">
             <div id="header__close-menu-button"></div>
 
-            <div class="header__nav-container" >
+            <div class="header__nav-container">
                 <ul class="header__nav-list">
                     <li class="header__nav-page header__nav-page--active">
                         <a href="#" class="header__nav-page-link header__nav-page-link--active">Home</a>
@@ -130,8 +130,8 @@
                     <li class="header__nav-page">
                         <a href="#" class="header__nav-page-link">Checkout</a>
                     </li>
-                    <li class="header__nav-page">
-                        <a href="#" class="header__nav-page-link">Account</a>
+                    <li class="header__nav-page ">
+                        <a href="#" class="header__nav-page-link ">Account</a>
                     </li>
                 </ul>
             </div>
@@ -187,7 +187,7 @@
                             quo,
                             temporibus unde voluptatibus.</p>
                         <div class="cracker__logo-wrap">
-                            <p class="cracker__logo">Cracker</p>
+                            <p id="cracker__about-logo" class="cracker__logo">Cracker</p>
                         </div>
                     </div>
                 </div>
@@ -231,13 +231,31 @@
                 </div>
                 <div class="form__input-Select">
                     <label id="package_img" for="package" class="constructor__label"></label>
-                    <select id="package" data-selected="">
-                        <option value="" disabled="disabled">Choose your pack</option>
-                        <option id="option" selected="selected" value="1">Small pack</option>
-                        <option value="2">Medium pack</option>
-                        <option value="3">Large pack</option>
+<!--                    <select class="select" id="package" data-selected="">-->
+<!--                        <option class="form__option" value="" disabled="disabled">Choose your pack</option>-->
+<!--                        <option class="form__option" id="option" selected="selected" value="1">Small pack</option>-->
+<!--                        <option class="form__option" value="2">Medium pack</option>-->
+<!--                        <option class="form__option" value="3">Large pack</option>-->
 
-                    </select>
+
+<!--                    </select>-->
+                    <div class="select-form" id="package">
+                        <div package="1" class="customSelect">
+                            <div class="select__text">Choose your pack</div>
+                            <div class="select__arrow"></div>
+                        </div>
+
+                        <div class="open">
+                            <div class="package__disabled">Choose your pack</div>
+                            <div package="1" class="inner-option" id="option-selected">Small pack</div>
+                            <div package="2" class="inner-option">Medium pack</div>
+                            <div package="3" class="inner-option">Large pack</div>
+                        </div>
+
+                    </div>
+
+
+
                 </div>
                 <!--                <div id="constructor-button">-->
                 <div class="constructor-button-wrap">

@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
     const listenerNodes = {
 
         unicID: () => Math.random().toString(36).substr(2, 9),
-
         rangeInputValues: () => Array.from(document.querySelectorAll(".constructor__range")),
         cornNode: () => document.getElementById("corn"),
         packageNode: () => document.getElementById("package"),
@@ -22,6 +21,9 @@ window.addEventListener('load', () => {
         openHeaderMenu: () => document.getElementById("header__open-menu-button"),
         closeHeaderMenu: () => document.getElementById("header__close-menu-button"),
         headerNav: () => document.getElementById("header__nav"),
+        openSelectors: () => document.querySelector(".open"),
+        selectHTMLinput: () => document.querySelector(".select__text"),
+
     };
 
 
@@ -34,6 +36,53 @@ window.addEventListener('load', () => {
         mediumPackage: 50,
         largePackage: 150,
     };
+
+    // package price translate input values to weight
+    let packagePrice = () => {
+        const packageNode = listenerNodes.selectHTMLinput().children[0];
+        let packageValue;
+        if(packageNode.id === "option-selected"){
+            packageValue = 1* packageNode.getAttribute("package");
+        }
+
+        if (packageValue === 1) return priceValues.smallPackage;
+        if (packageValue === 2) return priceValues.mediumPackage;
+        if (packageValue === 3) return priceValues.largePackage;
+
+    };
+
+
+    //package handlers
+// ________________________________________________
+
+    // toggle selector node
+    const toggleSelect = () => listenerNodes.openSelectors().classList.toggle("toggleSelect");
+    listenerNodes.packageNode().addEventListener("click", () => toggleSelect());
+
+    // render selected to input select
+    const insertSelect = () => {
+        let children = Array.from(listenerNodes.openSelectors().children);
+        children.map(child => {
+            if (child.id === "option-selected") {
+                listenerNodes.selectHTMLinput().innerHTML = child.outerHTML;
+            }
+        })
+
+    };
+    insertSelect();
+
+
+    const chooseSelect = event => {
+        const children = Array.from(listenerNodes.openSelectors().children);
+        children.map(child => child.removeAttribute("id"));
+        if (event.target.className === "inner-option") {
+            event.target.setAttribute("id", "option-selected");
+            insertSelect();
+
+        }
+
+    };
+    listenerNodes.openSelectors().addEventListener("click", event => chooseSelect(event));
 
 
     //open/close header menu
@@ -48,11 +97,11 @@ window.addEventListener('load', () => {
         listenerNodes.headerNav().style.display = "none";
     };
 
-    let shoveMenuResize = event =>{
-        if(window.innerWidth<=1300){
+    let shoveMenuResize = event => {
+        if (window.innerWidth <= 1300) {
             closeHeader(event);
         }
-        if(window.innerWidth>1300){
+        if (window.innerWidth > 1300) {
             openHeader(event);
         }
     };
@@ -75,15 +124,6 @@ window.addEventListener('load', () => {
     };
     listenerNodes.form().addEventListener("change", event => changePercents(event));
 
-
-    // package price translate input values to weight
-    let packagePrice = () => {
-        const packageValue = 1 * listenerNodes.packageNode().value;
-        if (packageValue === 1) return priceValues.smallPackage;
-        if (packageValue === 2) return priceValues.mediumPackage;
-        if (packageValue === 3) return priceValues.largePackage;
-
-    };
 
     // change constructor current value
 
@@ -292,6 +332,13 @@ window.addEventListener('load', () => {
 
 
     renderBasket();
+
+
+
+
+
+
+    console.log(packagePrice());
 
 });
 

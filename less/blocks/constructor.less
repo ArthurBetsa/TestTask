@@ -14,14 +14,17 @@
   color: #000000;
   font-family: 'Fredoka One', cursive;
   font-weight: 800;
-  font-size: 44px;
+  font-size: 48px;
   letter-spacing: 12px;
-  line-height: 1.38;
+  line-height: 1.4;
   position: relative;
   align-self: center;
   padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 65px;
   text-align: center;
+  @media (max-width: 1300px) {
+    width: 50%;
+  }
 }
 
 .constructor__value-top {
@@ -31,7 +34,13 @@
   align-items: flex-start;
   text-align: center;
   position: relative;
-  left: 110px;
+  left: 10%;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
 
   &p {
     display: inline-block;
@@ -41,16 +50,17 @@
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
+
+
+
   }
 
   &--title {
-    font-size: 20px;
-    text-transform: uppercase;
 
   }
 
   &--price {
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 
@@ -65,23 +75,28 @@
 .constructor__form {
   position: relative;
   display: flex;
-  width: 50%;
+  width: 55%;
   flex-direction: column;
+  @media (max-width: 1300px) {
+    width: 85%;
+  }
 }
 
 .form__inputWrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   position: relative;
 
 }
 
 .constructor__value{
-  font-size: 26px;
+  font-size: 32px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
+
+  width: 100px;
 }
 
 label {
@@ -118,7 +133,7 @@ label {
   margin-left: 10%;
 
   @media (max-width: 1300px) {
-   width: 50%;
+   width: 55%;
   }
 
 }
@@ -126,15 +141,20 @@ label {
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   background: transparent; /* Otherwise white in Chrome */
-  height: 3px;
-
+  height: 4px;
+  width: 62%;
+  margin-left: 0;
+  margin-right: 0;
+  @media (max-width: 1300px) {
+    width: 55%;
+  }
 }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 2px solid;
-  height: 26px;
-  width: 26px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
 
@@ -197,25 +217,25 @@ input[type=range]::-ms-track {
   position: relative;
 }
 
-#package {
-  display: flex;
-  outline: none;
-  position: relative;
-  width: 360px;
-  border: 1px solid #ff3300;
-  height: 55px;
-  border-radius: 30px;
-  font-family: 'Fredoka One', cursive;
-  font-size: 20px;
-  color: #ff3300;
-  left: 90px;
-  text-align-last: center;
-
-  option:active {
-    background-color: black;
-  }
-
-}
+//#package {
+//  display: flex;
+//  outline: none;
+//  position: relative;
+//  width: 360px;
+//  border: 1px solid #ff3300;
+//  height: 55px;
+//  border-radius: 30px;
+//  font-family: 'Fredoka One', cursive;
+//  font-size: 20px;
+//  color: #ff3300;
+//  left: 90px;
+//  text-align-last: center;
+//
+//  option:active {
+//    background-color: black;
+//  }
+//
+//}
 
 option{
   display: flex;
@@ -231,16 +251,18 @@ option{
 
 .constructor-button-wrap {
   position: relative;
-  width: 87px;
-  height: 85px;
+  width: 65px;
+  height: 65px;
 
   display: flex;
   align-self: flex-end;
   overflow: hidden;
 
   border-radius: 40px;
-  //background: #ff4200;
   transition: all 2s;
+
+  margin-right: 50px;
+  margin-bottom: 10px;
 
 
   &:hover {
@@ -256,11 +278,11 @@ option{
 
   position: absolute;
   width: 287px;
-  height: 82px;
+  height: 65px;
 
-  padding: 20px 30px;
+  padding: 10px 30px;
   outline: none;
-  background: #ff4200;
+  background: #ff3300;
   border: none;
   border-radius: 40px;
   cursor: pointer;
@@ -272,9 +294,7 @@ option{
   font-size: 35px;
   vertical-align: top;
   color: white;
-  left: 90px;
-
-  margin-left: 0;
+  left: 85px;
 
 
   &:hover{
@@ -285,13 +305,13 @@ option{
   }
 
   &:before {
-    background: #ff4200;
+    background: #ff3300;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 82px;
-    height: 82px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     left: -85px;
     top: 0;

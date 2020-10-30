@@ -3,7 +3,6 @@
   width: 100%;
   display: flex;
   position: relative;
-  height: 740px;
   justify-content: flex-start;
   padding-top: 15px;
 
@@ -16,32 +15,24 @@
   align-items: flex-end;
   align-self: flex-start;
 
-  //height: 45%;
-  //min-height: 325px;
   width: 45%;
-  top: 15%;
 
-  padding: 30px 60px 40px 10px;
+  margin-top: 95px;
+  margin-bottom: 300px;
+
+  padding: 35px 55px 35px 0;
   background: rgba(133, 167, 120, 0.9);
   line-height: 1.5;
 
-  //&:after {
-  //  content: "";
-  //  height: 100%;
-  //  width: 2px;
-  //  background-color: white;
-  //  position: relative;
-  //  bottom: 10px;
-  //}
 
   &--text {
     display: flex;
     align-items: flex-end;
     font-family: 'Lato', sans-serif;
     font-weight: normal;
-    font-size: 18px;
-    max-width: 300px;
-    min-height: 300px;
+    font-size: 20px;
+    max-width: 370px;
+    min-height: 290px;
     position: relative;
     padding-right: 25px;
     text-align: right;
@@ -66,17 +57,18 @@
 
 
   &--text {
-    text-transform: uppercase;
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    font-weight: 800;
-    font-size: 44px;
     z-index: 1;
-    letter-spacing: 5px;
-    line-height: 1.38;
     position: relative;
-    top: 120px;
-    right: 40px;
+    top: 115px;
+    right: 35px;
+
+    color: white;
+    font-family: 'Fredoka One', regular;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 3px;
+    line-height: 1.3;
 
     @media (max-width: 1300px) {
       top: auto;
@@ -90,28 +82,29 @@
   display: flex;
   align-self: center;
   position: relative;
-  top: 220px;
-  right: 175px;
+  top: 150px;
+  right: 140px;
   @media (max-width: 1300px) {
     right: auto;
   }
 
   &--button {
-    background: rgb(255, 66, 0);
-    color: white;
-    text-transform: uppercase;
-    font-size: 35px;
+    background: #ff3300;
     display: inline-block;
-    vertical-align: top;
-    min-width: 256px;
-    text-align: center;
-    padding: 20px 30px;
+    padding: 20px 55px;
     border: none;
     border-radius: 40px;
-    font-family: 'Fredoka One', cursive;
-    line-height: 1.1;
     cursor: pointer;
+
     text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 36px;
+    vertical-align: top;
+    color: white;
+    line-height: 1.1;
+    word-spacing: 5px;
 
     &:focus {
       outline: none;

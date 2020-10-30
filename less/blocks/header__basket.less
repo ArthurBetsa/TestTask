@@ -4,17 +4,18 @@
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;
-  top: 70px;
-  right: 400px;
+  top: 100%;
+  right: 25%;
 
-  padding-bottom: 15px;
-  padding-right: 20px;
+  //padding-bottom: 15px;
+  padding-bottom: 1%;
 
   font-family: 'Lato', sans-serif;
 
   background-color: white;
   color: black;
   text-transform: uppercase;
+
 
   z-index: 2;
   @media (max-width: 1300px) {
@@ -31,7 +32,7 @@
   width: 100%;
   padding-top: 15px;
   padding-right: 30px;
-  padding-left: 110px;
+  padding-left: 170px;
 
   align-items: center;
 
@@ -47,8 +48,12 @@
 
 .basket__goods-top {
   display: flex;
-  width: 220px;
   justify-content: space-between;
+
+  width: 220px;
+
+  margin-top: 8px;
+  margin-right: 50px;
 }
 
 .close--basket {
@@ -97,13 +102,14 @@
   display: flex;
   flex-direction: column;
 
-  max-height: 200px;
+  width: 100%;
+
+  max-height: 150px;
   min-height: 60px;
 
 
-  padding-left: 45px;
-  padding-right: 50px;
-  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
 
 }
 
@@ -116,7 +122,7 @@
 
 .goods__wrap {
   position: relative;
-  width: 450px;
+  width: 480px;
   margin-left: 40px;
 
   display: flex;
@@ -144,10 +150,10 @@
   align-items: center;
   justify-content: space-between;
 
-  width: 225px;
+  width: 230px;
 
   font-weight: 600;
-  color: #ff4200;
+  color: #ff3300;
 
   p {
     text-align: center;
@@ -168,7 +174,7 @@
 .goods__info-wrap {
   justify-content: space-between;
 
-  width: 200px;
+  width: 240px;
 
   font-weight: 500;
   font-size: 18px;
@@ -243,6 +249,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 
   width: 100%;
 
@@ -259,27 +266,50 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
   width: 160px;
   margin-right: 10px;
 
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+
   p {
     margin-bottom: 0;
     margin-right: 5px;
+
+
   }
+  span{
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+
+#basket__total-sum{
+  font-size: 24px;
+  font-weight: 400;
 }
 
 #basket__checkout {
   padding: 10px 20px;
+  position: relative;
 
   background: #ff4200;
   color: white;
   cursor: pointer;
   border: none;
   border-radius: 40px;
-
+  outline: none;
   text-align: center;
   text-transform: uppercase;
 
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+
+  &:active{
+    top: 5px
+  }
 }
