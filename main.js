@@ -334,12 +334,6 @@ window.addEventListener('load', () => {
     renderBasket();
 
 
-
-
-
-
-    console.log(packagePrice());
-
 });
 
 
