@@ -209,7 +209,7 @@ header {
   font-size: 20px;
 }
 .header__nav-container {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -221,13 +221,14 @@ header {
   .header__nav-container {
     left: unset;
     width: 90%;
+    max-width: 600px;
   }
 }
 .header__nav-list {
   position: relative;
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
