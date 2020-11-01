@@ -98,10 +98,10 @@ window.addEventListener('load', () => {
     };
 
     let shoveMenuResize = event => {
-        if (window.innerWidth <= 1300) {
+        if (window.innerWidth <= 770) {
             closeHeader(event);
         }
-        if (window.innerWidth > 1300) {
+        if (window.innerWidth > 770) {
             openHeader(event);
         }
     };
@@ -116,7 +116,7 @@ window.addEventListener('load', () => {
 
 // change input % value
 
-    let changePercents = event => {
+    let changePercents = () => {
         listenerNodes.rangeInputValues().map(inputNode => {
             let idToChange = `${inputNode.id}__value`;
             document.getElementById(idToChange).innerText = inputNode.value + "%";

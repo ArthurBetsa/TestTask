@@ -1,7 +1,7 @@
 @media screen and (max-width: 770px) {
   header {
     background-position: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
   }
 
   .header__top {
@@ -12,6 +12,7 @@
   .header__logo {
     justify-content: center;
     margin-bottom: 20px;
+    margin-left: unset;
   }
 
   .red-round {
@@ -34,6 +35,8 @@
     width: 100%;
     padding-bottom: 20px;
     justify-content: center;
+    margin-left: unset;
+    margin-right: unset;
 
     p {
       font-size: 24px;
@@ -66,8 +69,40 @@
   }
 
 
+
+  //header main
+  //___________
+
+
   #header__open-menu-button {
-    top: 5%;
+    display: flex;
+  }
+  #header__close-menu-button {
+    display: block;
+  }
+  .header__main {
+
+      position: fixed;
+      z-index: 9999;
+      display: none;
+      top: 100px;
+      background-color: rgba(24, 24, 24, 0.85);
+
+  }
+
+  .header__nav-container {
+    left: unset;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+
+  }
+
+
+
+  #header__open-menu-button {
+    top: 0;
     right: 0;
     border: 1px solid white;
   }
@@ -201,19 +236,23 @@
     order: -1;
     justify-content: center;
     position: unset;
-    background-color: rgba(50, 50, 50, 0.6);
+    //background-color: rgba(50, 50, 50, 0.6);
   }
 
   .intro__title--text {
     font-size: 34px;
     text-align: center;
+    text-shadow: 0 0 10px black;
   }
 
   .intro__description {
     padding: 30px 25px 20px 10px;
     margin-top: 30px;
     margin-bottom: 20px;
-    width: 100%;
+    width: 75%;
+    min-width: 360px;
+    text-align: justify;
+
 
     p {
       font-size: 25px;
@@ -310,6 +349,7 @@
 
   .constructor-button-wrap {
     margin-top: 15px;
+    margin-right: unset;
   }
 
   .footer {
@@ -323,9 +363,12 @@
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
+    padding-top: 20px;
   }
   .footer__column {
     width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   .footer__column h3 {
     font-size: 30px;
@@ -335,7 +378,7 @@
   .footer__inner-column {
 
     li {
-      min-width: 200px;
+      min-width: 260px;
     }
   }
 
@@ -343,7 +386,10 @@
     font-size: 22px;
   }
   .footer__links{
-    flex-direction: column;
+    .footer__text-description{
+      font-size: 16px;
+      box-shadow: 0 0 1px black;
+    }
   }
 }
 

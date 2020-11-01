@@ -61,7 +61,7 @@ header {
 @media (max-width: 1300px) {
   .top__menu-wrap {
     padding-right: 50px;
-    width: 60%;
+    width: 65%;
   }
 }
 .top__menu {
@@ -139,15 +139,6 @@ header {
   width: 100%;
   background-color: rgba(32, 32, 32, 0.6);
 }
-@media (max-width: 1300px) {
-  .header__main {
-    position: fixed;
-    z-index: 9999;
-    display: none;
-    top: 100px;
-    background-color: rgba(24, 24, 24, 0.85);
-  }
-}
 #header__open-menu-button {
   display: none;
   justify-content: center;
@@ -174,9 +165,6 @@ header {
   margin: 4px 0;
 }
 @media (max-width: 1300px) {
-  #header__open-menu-button {
-    display: flex;
-  }
 }
 #header__close-menu-button {
   display: none;
@@ -209,9 +197,6 @@ header {
   right: 25px;
 }
 @media (max-width: 1300px) {
-  #header__close-menu-button {
-    display: block;
-  }
 }
 .cracker__logo-wrap {
   display: flex;
@@ -235,6 +220,7 @@ header {
 @media (max-width: 1300px) {
   .header__nav-container {
     left: unset;
+    width: 90%;
   }
 }
 .header__nav-list {
@@ -247,9 +233,6 @@ header {
   flex-wrap: wrap;
 }
 @media (max-width: 1300px) {
-  .header__nav-list {
-    flex-direction: column;
-  }
 }
 .header__nav-page {
   display: flex;
@@ -749,6 +732,11 @@ option {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (max-width: 1300px) {
+  .footer__wrap {
+    width: unset;
+  }
+}
 .footer__column {
   display: flex;
   flex-direction: row;
@@ -1018,6 +1006,7 @@ option {
 .basket__total-container span {
   font-weight: 500;
   font-size: 24px;
+  margin-right: 15px;
 }
 #basket__total-sum {
   font-size: 24px;
@@ -1083,12 +1072,12 @@ option {
   background-color: #ff3300;
 }
 .customSelect:before {
-  right: 25px;
+  right: 28px;
   transform: rotate(-45deg);
 }
 .customSelect:after {
   transform: rotate(45deg);
-  right: 15px;
+  right: 18px;
 }
 .customSelect:hover:before,
 .customSelect:hover:after {
@@ -1139,7 +1128,7 @@ option {
 @media screen and (max-width: 770px) {
   header {
     background-position: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
   }
   .header__top {
     flex-direction: column;
@@ -1147,6 +1136,7 @@ option {
   .header__logo {
     justify-content: center;
     margin-bottom: 20px;
+    margin-left: unset;
   }
   .red-round {
     width: 30px;
@@ -1164,6 +1154,8 @@ option {
     width: 100%;
     padding-bottom: 20px;
     justify-content: center;
+    margin-left: unset;
+    margin-right: unset;
   }
   .top__menu p {
     font-size: 24px;
@@ -1188,7 +1180,26 @@ option {
     right: 45px;
   }
   #header__open-menu-button {
-    top: 5%;
+    display: flex;
+  }
+  #header__close-menu-button {
+    display: block;
+  }
+  .header__main {
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    top: 100px;
+    background-color: rgba(24, 24, 24, 0.85);
+  }
+  .header__nav-container {
+    left: unset;
+  }
+  .header__nav-list {
+    flex-direction: column;
+  }
+  #header__open-menu-button {
+    top: 0;
     right: 0;
     border: 1px solid white;
   }
@@ -1291,17 +1302,19 @@ option {
     order: -1;
     justify-content: center;
     position: unset;
-    background-color: rgba(50, 50, 50, 0.6);
   }
   .intro__title--text {
     font-size: 34px;
     text-align: center;
+    text-shadow: 0 0 10px black;
   }
   .intro__description {
     padding: 30px 25px 20px 10px;
     margin-top: 30px;
     margin-bottom: 20px;
-    width: 100%;
+    width: 75%;
+    min-width: 360px;
+    text-align: justify;
   }
   .intro__description p {
     font-size: 25px;
@@ -1370,6 +1383,7 @@ option {
   }
   .constructor-button-wrap {
     margin-top: 15px;
+    margin-right: unset;
   }
   .footer {
     min-height: unset;
@@ -1381,22 +1395,26 @@ option {
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
+    padding-top: 20px;
   }
   .footer__column {
     width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   .footer__column h3 {
     font-size: 30px;
     margin-bottom: 25px;
   }
   .footer__inner-column li {
-    min-width: 200px;
+    min-width: 260px;
   }
   .footer__text-description {
     font-size: 22px;
   }
-  .footer__links {
-    flex-direction: column;
+  .footer__links .footer__text-description {
+    font-size: 16px;
+    box-shadow: 0 0 1px black;
   }
 }
 html {
